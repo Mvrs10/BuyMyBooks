@@ -1,3 +1,6 @@
+using BuyMyBooks.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace BuyMyBooks
 {
     public class Program
@@ -8,6 +11,13 @@ namespace BuyMyBooks
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Configure EF for database connection
+            string? testConnectionString = builder.Configuration.GetSection("ConnectionStrings:SQLConnection").Value;
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection"));
+            });
 
             var app = builder.Build();
 
