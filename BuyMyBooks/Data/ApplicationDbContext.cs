@@ -14,9 +14,9 @@ public class ApplicationDbContext : DbContext
         //base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<Category>().HasData(
-            new Category { Id = 1, Name = "Action" },
-            new Category { Id = 2, Name = "SciFi" },
-            new Category { Id = 3, Name = "Kid" }
+            new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
+            new Category { Id = 2, Name = "SciFi", DisplayOrder = 3 },
+            new Category { Id = 3, Name = "Kid", DisplayOrder = 2}
             );
     }
 
