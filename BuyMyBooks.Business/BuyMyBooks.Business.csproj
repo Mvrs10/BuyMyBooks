@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuyMyBooks.DataAccess\BuyMyBooks.DataAccess.csproj" />
+    <ProjectReference Include="..\BuyMyBooks.Models\BuyMyBooks.Models.csproj" />
+    <ProjectReference Include="..\BuyMyBooks.Utility\BuyMyBooks.Utility.csproj" />
+  </ItemGroup>
+
+</Project>

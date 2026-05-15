@@ -1,4 +1,4 @@
-using BuyMyBooks.Data;
+using BuyMyBooks.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuyMyBooks

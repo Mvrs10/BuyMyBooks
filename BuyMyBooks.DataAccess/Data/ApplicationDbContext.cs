@@ -1,7 +1,7 @@
 ﻿using BuyMyBooks.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuyMyBooks.Data;
+namespace BuyMyBooks.DataAccess.Data;
 
 public class ApplicationDbContext : DbContext
 {
