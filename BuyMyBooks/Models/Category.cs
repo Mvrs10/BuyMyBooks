@@ -11,6 +11,7 @@ public class Category
     [StringLength(50)]
     public string Name { get; set; } = string.Empty;
 
+    [Required]
     [Range(0,100,ErrorMessage = "Range must be between 0-100!")]
     public int? DisplayOrder { get; set; }
 }
