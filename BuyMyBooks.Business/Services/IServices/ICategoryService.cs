@@ -18,5 +18,7 @@ public interface ICategoryService
     Task UpdateCategoryAsync(Category category);
 
     Task DeleteCategoryAsync(int id);
+
+    Task<bool> IsCategoryNameUniqueAsync(string name, int? categoryId = null);
 }
 

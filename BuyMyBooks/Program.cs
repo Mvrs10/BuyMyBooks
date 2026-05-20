@@ -1,3 +1,5 @@
+using BuyMyBooks.Business.Services;
+using BuyMyBooks.Business.Services.IServices;
 using BuyMyBooks.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +20,8 @@ namespace BuyMyBooks
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection"));
             });
+
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 
