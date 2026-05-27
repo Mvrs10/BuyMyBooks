@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using BuyMyBooks.Models;
 using BuyMyBooks.Business.Services.IServices;
 
-namespace BuyMyBooks.Controllers;
+namespace BuyMyBooks.Areas.Customer.Controllers;
 
+[Area("Customer")]
 public class CategoryController : Controller
 {
     private readonly ICategoryService _categoryService;
@@ -29,7 +30,7 @@ public class CategoryController : Controller
     [ActionName("Create")]
     public async Task<IActionResult> CreatePOST(Category category)
     {
-        if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
+        if (!string.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
         {
             ModelState.AddModelError("", "Category name already exists!");
         }
@@ -64,7 +65,7 @@ public class CategoryController : Controller
     [ActionName("Update")]
     public async Task<IActionResult> UpdatePOST(Category category)
     {
-        if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
+        if (!string.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
         {
             ModelState.AddModelError("", "Category name already exists!");
         }
